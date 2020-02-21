@@ -11,14 +11,14 @@ $(document).ready(function() {
   });
 
   function getQuote(){
-
-    //YOUR CODE HERE, Add a GET request
-
+    $.get("http://localhost:3000/quote", function(data){
+      $("#quote").append(data);
+    })
   }
 
   function addQuote(quote){
-    
-    //YOUR CODE HERE, Add a POST request
-
+    $.post("http://localhost:3000/quote", quote, function(){
+      $("#quote").append(quote);
+    })
   }
 });
